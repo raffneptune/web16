@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./raffneptune.jpg" type="image/x-icon" />
+    <title>Raff | Todo</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">Todo App</h1>
+      <div class="tasks-wrapper">
+        <div class="delete">
+          <ion-icon name="trash-outline"></ion-icon>
+        </div>
+      </div>
+      <div class="add-wrapper">
+        <form action="" id="add-task-form">
+          <div class="details">
+            <input type="text" id="title" placeholder="Task name here" />
+            <textarea
+              id="description"
+              placeholder="Task description here"
+            ></textarea>
+          </div>
+          <div class="footer">
+            <div class="info">
+              <label for="date">
+                <ion-icon name="calendar-outline"></ion-icon>
+                <input type="date" name="" id="date" />
+                <span>due date</span>
+              </label>
+              <label for="time">
+                <ion-icon name="time-outline"></ion-icon>
+                <input type="time" name="" id="time" />
+                <span>due time</span>
+              </label>
+            </div>
+            <div class="options">
+              <button type="button" class="btn clear">clear</button>
+              <button class="btn add">add task</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

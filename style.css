@@ -1,0 +1,251 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+:root {
+  --primary-color: #672ee3;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #efeef5;
+}
+.container {
+  position: relative;
+  width: 600px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.container .heading {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+}
+.tasks-wrapper {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 300px;
+  overflow: auto;
+}
+.task {
+  display: flex;
+  gap: 20px;
+  padding: 0 10px 20px 10px;
+  border-bottom: 1px solid #eee;
+}
+.task:last-child {
+  border-bottom: none;
+}
+.task .radio {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-top: 5px;
+  border: 1px solid #eee;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.task .radio .icon {
+  color: #fff;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.task.selected .radio {
+  background-color: var(--primary-color);
+}
+.task.task.selected .radio .icon {
+  opacity: 1;
+}
+.task .right {
+  flex: 1;
+}
+.task .title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+.task .description {
+  font-size: 14px;
+  color: #333;
+}
+.task .info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+  color: #8a8d9b;
+  margin-top: 10px;
+}
+.task .info.expired {
+  color: #f00;
+}
+.task .info .dot {
+  font-size: 5px;
+  color: #ddd;
+}
+.tasks-wrapper .delete {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+  bottom: 220px;
+  color: #bfc1ce;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tasks-wrapper .delete:hover {
+  color: #f00;
+  border-color: #f00;
+}
+.tasks-wrapper .delete.show {
+  display: flex;
+}
+.tasks-wrapper .no-tasks {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-wrapper {
+  width: 110%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.add-wrapper .details {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.add-wrapper .details input,
+.add-wrapper .details textarea {
+  font-size: 12px;
+  color: #333;
+}
+
+.add-wrapper .details input::placeholder,
+.add-wrapper .details textarea::placeholder {
+  color: #bfc1ce;
+}
+.add-wrapper .details input {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.add-wrapper .details textarea {
+  resize: none;
+  height: 100px;
+}
+.add-wrapper .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .info {
+  font-size: 12px;
+  color: #8a8d9b;
+  display: flex;
+  gap: 20px;
+}
+.footer .info label {
+  position: relative;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+  border: 1px solid #eee;
+}
+.footer .info input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.footer .info input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  height: auto;
+  width: auto;
+  background-color: transparent;
+  color: transparent;
+}
+.footer .btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.footer .btn.clear {
+  color: #8a8d9b;
+  border: 1px solid #eee;
+  background-color: transparent;
+}
+.footer .btn.add {
+  background-color: var(--primary-color);
+}
+
+/* media queries */
+@media screen and (max-width: 670px) {
+  body {
+    display: block;
+  }
+  .container {
+    width: 100%;
+    border-radius: 0;
+  }
+  .add-wrapper {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .tasks-wrapper .delete {
+    bottom: 280px;
+  }
+  .add-wrapper .footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
